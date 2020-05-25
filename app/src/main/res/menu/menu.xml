@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/saved"
+        android:icon="@drawable/ic_saved"
+        android:title="@string/saved" />
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/business_page"
+        android:icon="@drawable/ic_business_page"
+        android:title="@string/business_page"
+        android:visible="false" />
+</menu>

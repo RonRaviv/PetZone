@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/category_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detailed_info">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/category_background"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_toolbar"
+            layout="@layout/app_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+
+                <TextView
+                    android:id="@+id/place_name_detailed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:text="שם המקום"
+                    android:textAlignment="viewEnd"
+                    android:textDirection="rtl"
+                    android:textSize="28sp"
+                    android:textStyle="italic|bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="15dp"
+                    android:button="@drawable/favorite"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/place_pic_detailed"
+                    android:layout_width="350dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/pic_frame"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/place_ratingBar"
+                    app:srcCompat="@drawable/background" />
+
+                <RatingBar
+                    android:id="@+id/place_ratingBar"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintBottom_toTopOf="@id/place_pic_detailed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/place_name_detailed" />
+
+                <TextView
+                    android:id="@+id/place_address_detailed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="end"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    android:text="address"
+                    android:textAlignment="viewEnd"
+                    android:textDirection="rtl"
+                    app:layout_constraintTop_toBottomOf="@id/place_pic_detailed" />
+
+                <TextView
+                    android:id="@+id/place_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="end"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    android:text="gfhjfdkshgkhjfjdfhjgruilkhgdhgkidl\nfdsgshfhfgdgfhjsdkfhjgsdgjsk\ngfdshjkagyhdkfgyuakdsggfhjdgsyyfidlksaghdlfs\ngfdahhfdhrhfasgrgfr\nfghdsjakgfydhkafljakdfhgdsal dgalfg hgdlag hfgdlgagfielahguf ldlgf gel"
+                    android:textAlignment="viewEnd"
+                    android:textDirection="rtl"
+                    app:layout_constraintTop_toBottomOf="@id/place_address_detailed" />
+
+                <LinearLayout
+                    android:id="@+id/add_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:gravity="end"
+                    android:layoutDirection="rtl"
+                    android:orientation="horizontal"
+                    android:textDirection="rtl"
+                    app:layout_constraintTop_toBottomOf="@id/place_description">
+
+                    <TextView
+                        android:id="@+id/comment_rate_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="32dp"
+                        android:text="דרג והגב"
+                        android:textStyle="bold|italic" />
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent" />
+
+                    <RatingBar
+                        android:id="@+id/rate_place"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layoutDirection="ltr"
+                        android:theme="@style/AppTheme" />
+                </LinearLayout>
+
+                <com.example.myapplication.NonScrollListView
+                    android:id="@+id/comments_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/add_comment" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <!--creates the navigation drawer-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/category_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"
+        app:headerLayout="@layout/header_nav"
+        app:menu="@menu/menu" />
+</androidx.drawerlayout.widget.DrawerLayout>

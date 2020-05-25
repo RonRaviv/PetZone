@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bPage_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detailed_info">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/category_background"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_toolbar"
+            layout="@layout/app_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+
+                <EditText
+                    android:id="@+id/place_name_bPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:hint="שם העסק"
+                    android:inputType="none"
+                    android:textSize="28sp"
+                    android:textStyle="italic|bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textDirection="rtl"
+                    android:textAlignment="viewEnd"/>
+
+                <ImageView
+                    android:id="@+id/edit_button_bPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_edit_page"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/save_button_bPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/ic_save"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/cancel_button_bPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/ic_cancel_changes"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@+id/save_button_bPage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/place_pic_bPage"
+                    android:layout_width="350dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/pic_frame"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/place_ratingBar_bPage"
+                    app:srcCompat="@drawable/background" />
+
+                <RatingBar
+                    android:id="@+id/place_ratingBar_bPage"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintBottom_toTopOf="@id/place_pic_bPage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/place_name_bPage" />
+
+                <EditText
+                    android:id="@+id/place_address_bPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="end"
+                    android:hint="כתובת"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    app:layout_constraintTop_toBottomOf="@id/place_pic_bPage"
+                    android:textDirection="rtl"
+                    android:textAlignment="viewEnd"/>
+
+                <EditText
+                    android:id="@+id/place_description_bPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="end"
+                    android:hint="תיאור העסק"
+                    android:inputType="none"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    app:layout_constraintTop_toBottomOf="@id/place_address_bPage"
+                    android:textDirection="rtl"
+                    android:textAlignment="viewEnd" />
+
+                <LinearLayout
+                    android:id="@+id/add_comment_bPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:gravity="end"
+                    android:layoutDirection="rtl"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/place_description_bPage">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="32dp"
+                        android:text="דרג והגב"
+                        android:textStyle="bold|italic" />
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent" />
+
+                    <RatingBar
+                        android:id="@+id/rate_place_bPage"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layoutDirection="ltr"
+                        android:theme="@style/AppTheme" />
+                </LinearLayout>
+
+                <com.example.myapplication.NonScrollListView
+                    android:id="@+id/comments_list_view_bPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/add_comment_bPage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <!--creates the navigation drawer-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/bPage_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"
+        app:headerLayout="@layout/header_nav"
+        app:menu="@menu/menu" />
+</androidx.drawerlayout.widget.DrawerLayout>

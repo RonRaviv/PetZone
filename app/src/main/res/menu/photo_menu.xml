@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="העלה תמונה"
+        android:id="@+id/upload_pic"
+        android:icon="@drawable/ic_galery"/>
+
+    <item
+        android:title="מחק תמונה"
+        android:id="@+id/delete_pic"
+        android:icon="@drawable/ic_delete"/>
+
+</menu>

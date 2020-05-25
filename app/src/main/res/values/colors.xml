@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#1e85c1</color>
+    <color name="category_top_bar">#7bb67c</color>
+    <color name="colorAccent">#D81B60</color>
+    <!--<color name="header_background">#8D84FD</color>-->
+    <color name="header_background">#63ccff</color>
+    <color name="background">#e5ffff</color>
+    <color name="menu">#9400D3</color>
+    <!--<color name="toolbar_background">#008544</color>-->
+    <color name="toolbar_background">#ace8ac</color>
+    <color name="toolbar_background_main">#b2ebf2</color>
+    <color name="category_background">#dfffdd</color>
+</resources>
+<!--4caf50-->
